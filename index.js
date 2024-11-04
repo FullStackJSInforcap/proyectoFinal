@@ -1,15 +1,7 @@
-const Cliente = require("./models/cliente");
+const { findAllClientes, findByIdCliente, createCliente } = require("./service/cliente");
 
-const llenandoDeFlojo = () => {
-    for(let i = 0 ; i < 10 ; i++){
-        Cliente.create({
-            rut: `11111111-${i}`,
-            nombre: `nombre ${i}`,
-            direccion: `direccion ${i}`,
-            correo: `correo${i}@mail.com`,
-            telefono: `123456789${i}`
-        });
-    }
-}
-
-llenandoDeFlojo();
+createCliente('22222222-2', 'nombre dos cliente', 'direccion dos cliente', 'correoDosCliente@mail.com', '987654321').then((datos) => {
+    console.log(datos);
+}).catch((error) => {
+    console.log(error);
+});
