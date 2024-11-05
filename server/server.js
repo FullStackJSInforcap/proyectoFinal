@@ -14,6 +14,7 @@ class Server{
     }
 
     routes(){
+        this.app.use('/usuarios', require('../routes/usuario'));
         this.app.use('/clientes', require('../routes/cliente'));
     }
 
