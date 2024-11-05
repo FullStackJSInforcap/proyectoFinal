@@ -1,7 +1,5 @@
-const { findAllClientes, findByIdCliente, createCliente, updateCliente, deleteById } = require("./service/cliente");
+const Server = require("./server/server");
 
-deleteById( 11 ).then((datos) => {
-    console.log(datos);
-}).catch((error) => {
-    console.log(error);
-});
+const server = new Server();
+
+server.listen();
