@@ -26,6 +26,21 @@ const createUsuario = async (nombreUsuario, correo, clave, rol, estado) => {
     }
 }
 
+const updateUsuario = async (id, nombreUsuario, correo, clave, rol, estado) => {
+    try {
+        // clave fuerte
+        // clave debe ser nueva
+        
+        await Usuario.update({ nombreUsuario, correo, clave, rol, estado }, { where: { id } });
+        
+    } catch (error) {
+        console.log(error);
+        
+        return error.message; 
+    }
+}
+
 module.exports = {
-    createUsuario
+    createUsuario,
+    updateUsuario
 }

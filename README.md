@@ -9,3 +9,4 @@
 8. Controlador usuario create
 9. Ruta usuario post
 10. Validaciones mediante express-validator en usuario
+11. Update usuario ok

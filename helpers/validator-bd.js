@@ -7,7 +7,7 @@ const validarRolExiste = async (rol) => {
             role: rol
         }
     });
-    if(!role){
+    if (!role) {
         throw new Error(`El rol ${rol} no existe`);
     }
 }
@@ -21,9 +21,9 @@ const existeNombreUsuario = async (nombreUsuario) => {
 
 const existeCorreo = async (correo) => {
     const existeCorreo = await Usuario.findOne({ where: { correo } });
-        if (existeCorreo) {
-            throw new Error(`El correo ${correo} ya existe`);
-        }
+    if (existeCorreo) {
+        throw new Error(`El correo ${correo} ya existe`);
+    }
 }
 
 module.exports = {
