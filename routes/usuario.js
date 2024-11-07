@@ -3,7 +3,6 @@ const { createUsuarioController, updateUsuarioController } = require('../control
 const { check } = require('express-validator');
 const { validatorCampos } = require('../middlewares/validator-campos');
 const { validarRolExiste, existeNombreUsuario, existeCorreo } = require('../helpers/validator-bd');
-const Usuario = require('../models/usuario');
 
 const router = Router();
 
@@ -29,24 +28,6 @@ router.put('', [
     check('nombreUsuario').custom(existeNombreUsuario),
     check('correo').custom(existeCorreo),
     check('rol').custom(validarRolExiste),
-    /* check('clave').custom((clave) => {
-        // Empieza con mayuscula, termina con numero
-        const regex = /^[A-Z].*\d$/;
-        console.log(!regex.test(clave));
-        if(!regex.test(clave)){
-            throw new Error('La clave no es fuerte');
-        }
-    }), */
-    /* check('id').custom( async (id) => {
-        const usuario = await Usuario.findOne({
-            where: {
-                id
-            }
-        });
-        if(usuario.toJSON().clave === clave){
-            throw new Error('No puedes poner tu misma clave');
-        }
-    }), */
     validatorCampos
 ] ,updateUsuarioController);
 

@@ -10,3 +10,5 @@
 9. Ruta usuario post
 10. Validaciones mediante express-validator en usuario
 11. Update usuario ok
+12. ruta login con entrega de jwt
+13. delete bloqueado con validación de token y administrador
