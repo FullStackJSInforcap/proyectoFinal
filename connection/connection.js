@@ -6,7 +6,13 @@ const sequelize = new Sequelize({
     host: 'c3cj4hehegopde.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
     port: 5432,
     database: 'db5drbiquadh3t',
-    dialect: 'postgres'
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+          require: true, // This will help you. But you will see nwe error
+          rejectUnauthorized: false // This line will fix new error
+        }
+      }
   });
 
 module.exports = sequelize;
